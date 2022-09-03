@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rest Countries</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="assets/style.css" rel="stylesheet">
+
+</head>
+<body>
+<header class="p-10 bg-white mb-5">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1>Where in the world?</h1>
+        <p>Dark Mode</p>
+    </div>
+</header>
+<div id="container" class="container">
+    <div id="filter" class=" d-flex justify-content-between">
+        <div class="position-relative w-25">
+            <input type="search" placeholder="search for a country" class="mb-5 rounded "/>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 class="position-absolute search-icon ">
+                <path d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+        <div id="dropdown"
+             class="d-flex flex-column filter  position-relative">
+            <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded">
+                <p id="region">Filter by Region</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="ml-2">
+                    <path fill="var(--90)"
+                          d="M8.292893.292893c.390525-.390524 1.023689-.390524 1.414214 0 .390524.390525.390524 1.023689 0 1.414214l-4 4c-.390525.390524-1.023689.390524-1.414214 0l-4-4c-.390524-.390525-.390524-1.023689 0-1.414214.390525-.390524 1.023689-.390524 1.414214 0L5 3.585786 8.292893.292893z"></path>
+                </svg>
+            </div>
+            <div id="dropdown-filter" class="mt-2 position-absolute bg-white  rounded">
+                <p class="filter-region">Africa</p>
+                <p class="filter-region">Europe</p>
+                <p class="filter-region">Americas</p>
+                <p class="filter-region">Asia</p>
+                <p class="filter-region">Oceania</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="page">
+        <div id="back" class="bg-white back-btn">
+            <img src="assets/images/icons8-left-arrow-50.png">
+            <p>Back</p>
+        </div>
+        <div class="d-flex align-items-center mt-5 w-100 justify-content-between">
+            <div style="width: 45%">
+                <img src="#" id="country-image">
+            </div>
+            <div style="width: 50%">
+                <h1 id="country"></h1>
+                <div id="details" class="d-flex justify-content-between flex-wrap">
+                    <h3 id="native">Native Name: <p></p></h3>
+                    <h3 id="domain">Top Level Domain: <p></p></h3>
+                    <h3 id="population">Population: <p></p></h3>
+                    <h3 id="currencies">Currencies: <p></p></h3>
+                    <h3 id="regions">Region: <p></p></h3>
+                    <h3 id="language">Language: <p></p></h3>
+                    <h3 id="subregion">Sub Region: <p></p></h3>
+                    <h3 id="capital">Capital: <p></p></h3>
+                    <h3 id="borders">Border Countries: <p></p></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/script.js"></script>
+
+</body>
+</html>
