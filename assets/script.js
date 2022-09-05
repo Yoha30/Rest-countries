@@ -118,7 +118,7 @@ async function countries() {
 
         btn.addEventListener('click', countryDetails)
 
-         function filter(e) {
+        function filter(e) {
             filterRegion.innerText = e.target.innerText;
             if (filterRegion.innerText == regions) {
                 div.appendChild(img);
@@ -127,6 +127,7 @@ async function countries() {
                 div2.appendChild(p3);
                 div2.appendChild(p1);
                 div2.appendChild(p2);
+                div2.appendChild(btn);
                 mainDiv.appendChild(div);
             } else {
                 div.removeChild(img);
@@ -135,6 +136,7 @@ async function countries() {
                 div2.removeChild(p3);
                 div2.removeChild(p1);
                 div2.removeChild(p2);
+                div2.removeChild(btn);
                 mainDiv.removeChild(div);
             }
         }
