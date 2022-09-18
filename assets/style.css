@@ -188,6 +188,16 @@ h1 {
     }
 }
 
+#dropdown-search {
+    z-index: 50;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    width: 100%;
+}
+
+#dropdown-search p {
+    cursor: pointer;
+}
+
 @media screen and (min-width: 577px) and (max-width: 991px) {
     .cards {
         width: 48%;
@@ -196,11 +206,12 @@ h1 {
     .filter {
         width: 25% !important;
     }
-    .filter div{
+
+    .filter div {
         width: 100% !important;
     }
 
-    #filter  div:first-child {
+    #filter div:first-child {
         width: 50%;
     }
 }

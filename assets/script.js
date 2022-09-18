@@ -169,6 +169,12 @@ async function countries() {
 
         function handleSearch(e) {
             if (country.toUpperCase().includes(search.value) || country.toLowerCase().includes(search.value) || search.value == '' || country.includes(search.value)) {
+                const dropdownSearch = document.querySelector('#dropdown-search');
+                dropdownSearch.classList.add('d-none');
+                const para = document.createElement('p');
+                para.innerText = country;
+                para.classList.add('filter-region')
+                dropdownSearch.appendChild(para);
                 div.appendChild(img);
                 div.appendChild(div2);
                 div2.appendChild(h2);
@@ -186,6 +192,7 @@ async function countries() {
                 div2.removeChild(p2);
                 div2.removeChild(btn);
                 mainDiv.removeChild(div);
+                dropdownSearch.removeChild(para);
             }
             if (name.common == 'Israel') {
                 div.removeChild(img);
