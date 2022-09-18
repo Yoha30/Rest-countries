@@ -43,13 +43,13 @@ async function countries() {
         const img = document.createElement('img');
         const btn = document.createElement('button');
         tlD.innerText = members.tld;
-        nativeNa.innerText = Object.keys(name.nativeName);
-        currencies.innerText = Object.keys(members.currencies);
+        // nativeNa.innerText = Object.keys(name.nativeName);
+        // currencies.innerText = (members.currencies);
         countryPopulation.innerText = members.population;
         region.innerText = members.region;
         subRegion.innerText = members.subregion;
         capital.innerText = members.capital;
-        lang.innerText = Object.keys(members.languages);
+        // lang.innerText = members.languages;
         borders.innerText = members.borders;
         h2.innerText = name.common;
         p3.innerText = `Population: ${members.population}`;
@@ -114,8 +114,22 @@ async function countries() {
                 countryCapital.innerText = capital.innerText;
                 countryBorders.innerText = borders.innerText;
             }
+            if (countryBorders.innerText.includes('ISR')) {
+                countryBorders.innerText = countryBorders.innerText.replace('ISR,', '');
+            }
+
         }
 
+        if (name.common == 'Israel') {
+            div.removeChild(img);
+            div.removeChild(div2);
+            div2.removeChild(h2);
+            div2.removeChild(p3);
+            div2.removeChild(p1);
+            div2.removeChild(p2);
+            div2.removeChild(btn);
+            mainDiv.removeChild(div);
+        }
         btn.addEventListener('click', countryDetails)
 
         function filter(e) {
@@ -139,12 +153,22 @@ async function countries() {
                 div2.removeChild(btn);
                 mainDiv.removeChild(div);
             }
+            if (name.common == 'Israel') {
+                div.removeChild(img);
+                div.removeChild(div2);
+                div2.removeChild(h2);
+                div2.removeChild(p3);
+                div2.removeChild(p1);
+                div2.removeChild(p2);
+                div2.removeChild(btn);
+                mainDiv.removeChild(div);
+            }
         }
 
         dropDownFilter.addEventListener('click', filter)
 
         function handleSearch(e) {
-            if (search.value == country || search.value == country.toUpperCase() || search.value == country.toLowerCase() || search.value == '') {
+            if (country.toUpperCase().includes(search.value) || country.toLowerCase().includes(search.value) || search.value == '' || country.includes(search.value)) {
                 div.appendChild(img);
                 div.appendChild(div2);
                 div2.appendChild(h2);
@@ -163,10 +187,21 @@ async function countries() {
                 div2.removeChild(btn);
                 mainDiv.removeChild(div);
             }
+            if (name.common == 'Israel') {
+                div.removeChild(img);
+                div.removeChild(div2);
+                div2.removeChild(h2);
+                div2.removeChild(p3);
+                div2.removeChild(p1);
+                div2.removeChild(p2);
+                div2.removeChild(btn);
+                mainDiv.removeChild(div);
+            }
         }
 
-        search.addEventListener('change', handleSearch);
+        search.addEventListener('input', handleSearch);
     }
 }
 
 countries();
+
